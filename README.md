@@ -1,50 +1,92 @@
-# Welcome to your Expo app 👋
+# MediScan AI 💊
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MediScan AI is an intelligent mobile application built with React Native and Expo that helps users identify and understand their medications. By simply taking a photo or uploading an image of a medicine strip, box, or tablet, the app leverages Google Gemini AI to instantly extract critical details like the medicine name, its generic components, its uses, and potential side-effects.
 
-## Get started
+To make this information even more accessible, MediScan AI employs Text-to-Speech (TTS) to automatically read the details out loud.
 
-1. Install dependencies
+## Features ✨
 
+- **📸 Instant Scanning:** Take a photo using your device camera or upload one from the gallery to scan any medicine.
+- **🧠 AI-Powered Analysis:** Integrates seamlessly with the **Google Gemini API** for powerful OCR capabilities and intelligent understanding of the medication.
+- **🔊 Text-to-Speech (TTS):** Automatically speaks the details of the scanned medicine for ease of accessibility. The app includes a dedicated TTS settings screen where you can adjust pitch and speed.
+- **🕰️ Scan History:** Automatically saves previously scanned medicines so you never lose track of a result, bringing up the details instantly without a re-scan.
+- **🎨 Modern & Interactive UI:** Built with fluid animations, a beautiful dark-mode first design, gradient overlays, and haptic feedback.
+
+## Tech Stack 🛠️
+
+- **Frontend:** [React Native](https://reactnative.dev) & [Expo](https://expo.dev) 
+- **AI / OCR:** [Google Gemini AI](https://ai.google.dev/) (`@google/generative-ai`)
+- **Navigation:** [React Navigation](https://reactnavigation.org/) (Bottom Tabs)
+- **Device Capabilities:** 
+  - `expo-camera` / `expo-image-picker` for Image Capture
+  - `expo-speech` for Audio Feedback
+- **Animation:** `react-native-reanimated` and `Animated` from React Native
+
+## Project Structure 📁
+
+```
+medicine-scanner/
+├── app/
+│   ├── (tabs)/
+│   │   ├── _layout.tsx      # Bottom Tab Navigator configuration
+│   │   ├── index.tsx        # Main Scanner Screen (MediScan AI)
+│   │   ├── history.tsx      # Scan History View
+│   │   ├── speak.tsx        # Text-to-Speech customization settings
+│   │   └── about.tsx        # App info and about screen
+├── components/            # Reusable UI components (ResultCard, etc.)
+├── hooks/                 # Custom React hooks (e.g., useSpeech)
+├── services/              # API services (geminiService.ts)
+├── store/                 # State management (historyStore.ts)
+└── assets/                # Images, fonts, and icons
+```
+
+## Getting Started 🚀
+
+### Prerequisites
+- Node.js (>= 18.x recommended)
+- `npm` or `yarn`
+- [Expo Go](https://expo.dev/go) installed on your iOS or Android device (for physical testing).
+
+### Installation
+
+1. **Clone the repository (if applicable)**
+   ```bash
+   git clone <repository_url>
+   cd medicine-scanner
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Environment Setup**
+   Create a `.env` file in the root of your project and add your Google Gemini API key:
+   ```env
+   EXPO_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+   > You can get a free API key from the [Google AI Studio](https://aistudio.google.com/).
 
+4. **Start the app**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+5. **Run on Device / Emulator**
+   - Press **`a`** to open on an Android emulator.
+   - Press **`i`** to open on an iOS simulator.
+   - **Scan the QR code** using the Expo Go app on your physical device for the best camera testing experience.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Contributing 🤝
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Contributions, issues, and feature requests are welcome! Make sure to open an issue before creating large PRs so we can discuss the proposed changes.
 
-## Get a fresh project
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-When you're ready, run:
+## License 📜
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is open-source and available under the [MIT License](LICENSE).
