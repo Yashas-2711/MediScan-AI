@@ -269,6 +269,7 @@ export default function ScannerScreen() {
             )}
           </Animated.View>
         )}
+       
 
         <View style={{ height: 100 }} />
       </ScrollView>

@@ -71,7 +71,7 @@ export default function AboutScreen() {
           <View style={styles.card}>
             <InfoRow icon="phone-portrait-outline" label="Framework" value="React Native (Expo)" color="#60A5FA" />
             <View style={styles.divider} />
-            <InfoRow icon="sparkles" label="AI Engine" value="Google Gemini 1.5 Flash" color="#00D4AA" />
+            <InfoRow icon="sparkles" label="AI Engine" value="Google Gemini 2.5 Flash" color="#00D4AA" />
             <View style={styles.divider} />
             <InfoRow icon="camera-outline" label="Camera" value="expo-image-picker" color="#F59E0B" />
             <View style={styles.divider} />

@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-
+import Constants from 'expo-constants';
 export interface MedicineInfo {
   name: string;
   genericName: string;
@@ -39,9 +39,11 @@ function fileUriToBase64(uri: string): Promise<string> {
 
 export async function analyzeMedicineImage(imageUri: string): Promise<ScanResult> {
   try {
-    // Read at call-time so Expo always has the latest injected value
-    const API_KEY = process.env.EXPO_PUBLIC_GEMINI_API_KEY || '';
-    const MODEL_NAME = process.env.EXPO_PUBLIC_GEMINI_MODEL || 'gemini-2.5-flash';
+    // Read at call-time so Expo always has the latest injected valueimport Constants from 'expo-constants';
+
+
+const API_KEY = process.env.EXPO_PUBLIC_GEMINI_API_KEY;
+    const MODEL_NAME = process.env.EXPO_PUBLIC_GEMINI_MODEL || 'gemini-3.1-flash-lite-preview';
 
     if (!API_KEY || API_KEY.trim() === '' || API_KEY === 'your_gemini_api_key_here') {
       throw new Error(
