@@ -66,7 +66,7 @@ export default function AboutScreen() {
         </View>
 
         {/* Technology Stack */}
-        <View style={styles.section}>
+        {/* <View style={styles.section}>
           <Text style={styles.sectionTitle}>Technology Stack</Text>
           <View style={styles.card}>
             <InfoRow icon="phone-portrait-outline" label="Framework" value="React Native (Expo)" color="#60A5FA" />
@@ -77,7 +77,7 @@ export default function AboutScreen() {
             <View style={styles.divider} />
             <InfoRow icon="navigate" label="Navigation" value="Expo Router (File-based)" color="#A78BFA" />
           </View>
-        </View>
+        </View> */}
 
         {/* Features */}
         <View style={styles.section}>

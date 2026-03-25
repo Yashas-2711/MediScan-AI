@@ -2,7 +2,7 @@ export default {
   expo: {
     name: "MediScan-AI",
     slug: "medicine-scanner",
-    version: "1.0.0",
+    version: "1.0.1",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "medicinescanner",
@@ -14,6 +14,13 @@ export default {
       eas: {
         projectId: "b8974efe-fc71-4146-9739-31be72431b1a"
       }
+    },
+ updates: {
+      url: "https://u.expo.dev/b8974efe-fc71-4146-9739-31be72431b1a"
+    },
+
+    runtimeVersion: {
+      policy: "appVersion"
     },
 
     android: {
